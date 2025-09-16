@@ -1,28 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Baylight</title>
   <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #fafafa;
-      font-family: "Helvetica Neue", Arial, sans-serif;
+    :root {
+      --bg: #0b1020;          /* deep navy to match the neon look */
+      --fg: #dfe7ff;          /* soft light text */
+      --accent: #39a4ff;      /* neon-ish blue for glow */
     }
+
+    * { box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: radial-gradient(1200px 800px at 50% 40%, #101935 0%, var(--bg) 60%);
+      color: var(--fg);
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+    }
+
+    .wrap {
+      min-height: 100%;
+      display: grid;
+      place-items: center;
+      padding: 40px 20px;
+      text-align: center;
+      gap: 16px;
+    }
+
+    .logo {
+      width: min(86vw, 520px);
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 0 18px rgba(57,164,255,.45));
+      animation: pulse 2.6s ease-in-out infinite;
+      will-change: transform, filter;
+    }
+
+    @keyframes pulse {
+      0%   { transform: scale(1);    filter: drop-shadow(0 0 16px rgba(57,164,255,.40)); }
+      50%  { transform: scale(1.035); filter: drop-shadow(0 0 28px rgba(57,164,255,.75)); }
+      100% { transform: scale(1);    filter: drop-shadow(0 0 16px rgba(57,164,255,.40)); }
+    }
+
+    /* Respect users who prefer reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .logo { animation: none; }
+    }
+
     h1 {
-      font-size: 3rem;
+      margin: 0;
       font-weight: 300;
-      color: #333;
-      letter-spacing: 2px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: clamp(18px, 3.2vw, 22px);
+      opacity: .85;
+    }
+
+    .note {
+      opacity: .6;
+      font-size: 14px;
+      letter-spacing: .04em;
     }
   </style>
 </head>
 <body>
-  <h1>Baylight</h1>
+  <main class="wrap">
+    <!-- Update the src path to where you place the image in your repo -->
+    <img class="logo" src="logo.jpeg" alt="Baylight leaf logo" />
+    <h1>Baylight</h1>
+    <div class="note">Coming Soon</div>
+  </main>
 </body>
 </html>
-
