@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Baylight | Coming Soon</title>
-  <link rel="icon" type="image/jpeg" href="favicon.ico" />
+  <title>Harmonise IT | Coming Soon</title>
+  <link rel="icon" type="image/png" href="favicon.ico" />
   <style>
     :root {
-      --bg: #0b1020;          /* deep navy to match the neon look */
+      --bg: #0b1020;          /* deep navy */
       --fg: #dfe7ff;          /* soft light text */
-      --accent: #39a4ff;      /* neon-ish blue for glow */
+      --accent: #39a4ff;      /* neon blue for glow */
     }
 
     * { box-sizing: border-box; }
@@ -30,48 +30,25 @@
       gap: 16px;
     }
 
-    .logo {
-      width: min(86vw, 520px);
-      height: auto;
-      display: block;
-      filter: drop-shadow(0 0 18px rgba(57,164,255,.45));
-      animation: pulse 2.6s ease-in-out infinite;
-      will-change: transform, filter;
-    }
-
-    @keyframes pulse {
-      0%   { transform: scale(1);    filter: drop-shadow(0 0 16px rgba(57,164,255,.40)); }
-      50%  { transform: scale(1.035); filter: drop-shadow(0 0 28px rgba(57,164,255,.75)); }
-      100% { transform: scale(1);    filter: drop-shadow(0 0 16px rgba(57,164,255,.40)); }
-    }
-
-    /* Respect users who prefer reduced motion */
-    @media (prefers-reduced-motion: reduce) {
-      .logo { animation: none; }
-    }
-
     h1 {
       margin: 0;
-      font-weight: 300;
+      font-weight: 400;
       letter-spacing: .12em;
-      text-transform: uppercase;
-      font-size: clamp(18px, 3.2vw, 22px);
-      opacity: .85;
+      font-size: clamp(22px, 4vw, 32px);
+      opacity: .95;
+      text-shadow: 0 0 12px rgba(57,164,255,.6);
     }
 
     .note {
-      opacity: .6;
-      font-size: 14px;
+      opacity: .75;
+      font-size: 16px;
       letter-spacing: .04em;
     }
   </style>
 </head>
 <body>
   <main class="wrap">
-    <!-- Update the src path to where you place the image in your repo -->
-    <img class="logo" src="logo.jpeg" alt="Baylight leaf logo" />
-    <h1>Baylight</h1>
-    <div class="note">Coming Soon</div>
+    <h1>Harmonise IT</h1>
   </main>
 </body>
 </html>
